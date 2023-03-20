@@ -2,6 +2,7 @@
     --main-cinza: #CCCCCC;
     --main-branco: #FFFFFF;
     --main-preto: #000000;
+    --main-vermelho: #bd0000;
 }
 
 * {
@@ -9,9 +10,9 @@
 }
 
 body {
-    background: url(../img/fundo.jpg);
+    background: url(../img/fundo2.jpg);
     background-position: center center;
-    background-size: cover cover;
+    background-size: 100% auto;
     padding: 0;
     margin: 0;
     font-weight: 300;
@@ -61,7 +62,7 @@ main {
 .box {
     background: rgba(0,0,0,0.6);
     clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
-    border-left: 5px solid var(--main-cinza);
+    border-left: 5px solid var(--main-vermelho);
     height: 80%;
 }
 
