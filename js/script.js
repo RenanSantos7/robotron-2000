@@ -1,15 +1,12 @@
+const braco = document.querySelector('#braco');
 const contador = document.querySelectorAll('.controle-contador');
 const controles = document.querySelectorAll('.controle-ajuste');
 
 controles.forEach(controle => {
-    controle.addEventListener("click", () => {
-        let classe = `${controle.classList[1]}`;
-        manipulaDados(classe);
+    controle.addEventListener("click", (evento) => {
+        manipulaDados(evento.target.textContent);
     });
 });
-
-
-
 
 function zeroEsquerda(numero) {
     if (numero < 10) {
@@ -19,7 +16,7 @@ function zeroEsquerda(numero) {
 }
 
 function manipulaDados(operacao) {
-    if (operacao === "subtrair") {
+    if (operacao === "-") {
         braco.value = parseInt(braco.value) - 1;
         
         if (braco.value < 0) {
