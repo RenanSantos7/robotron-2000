@@ -1,15 +1,10 @@
-const contador = document.querySelectorAll('.controle-contador');
-const controles = document.querySelectorAll('.controle-ajuste');
+const controles = document.querySelectorAll('[data-controle]');
 
 controles.forEach(controle => {
-    controle.addEventListener("click", () => {
-        let classe = `${controle.classList[1]}`;
-        manipulaDados(classe);
+    controle.addEventListener("click", (evento) => {
+        manipulaDados(evento.target.dataset.controle, evento.target.parentNode);
     });
 });
-
-
-
 
 function zeroEsquerda(numero) {
     if (numero < 10) {
@@ -18,18 +13,17 @@ function zeroEsquerda(numero) {
     return numero;
 }
 
-function manipulaDados(operacao) {
-    if (operacao === "subtrair") {
-        braco.value = parseInt(braco.value) - 1;
+function manipulaDados(operacao, controle) {
+    const peca = controle.querySelector("[data-contador]");
+    if (operacao === "-") {
+        peca.value = parseInt(peca.value) - 1;
         
-        if (braco.value < 0) {
-            braco.value = 0;
+        if (peca.value < 0) {
+            peca.value = 0;
         }
         
-        braco.value = zeroEsquerda(braco.value);
-
     } else {
-        braco.value = parseInt(braco.value) + 1;
-        braco.value = zeroEsquerda(braco.value);
+        peca.value = parseInt(peca.value) + 1;
     }
+    peca.value = zeroEsquerda(peca.value);
 } 
