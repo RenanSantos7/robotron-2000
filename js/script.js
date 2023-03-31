@@ -36,7 +36,8 @@ const pecas = { //array de objetos
 
 controles.forEach(controle => {
     controle.addEventListener("click", (evento) => {
-        manipulaDados(evento.target.dataset.controle, evento.target.parentNode);
+        const alvo = evento.target;
+        manipulaDados(alvo.dataset.controle, alvo.parentNode);
     });
 });
 
@@ -49,8 +50,8 @@ function zeroEsquerda(numero) {
 
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector("[data-contador]");
-    if (operacao === "subtrair") {
-        braco.value = parseInt(braco.value) - 1;
+    if (operacao === "-") {
+        peca.value = parseInt(peca.value) - 1;
         
         if (peca.value < 0) {
             peca.value = 0;
