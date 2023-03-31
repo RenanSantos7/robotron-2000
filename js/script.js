@@ -47,7 +47,8 @@ function zeroEsquerda(numero) {
     return numero;
 }
 
-function manipulaDados(operacao) {
+function manipulaDados(operacao, controle) {
+    const peca = controle.querySelector("[data-contador]");
     if (operacao === "subtrair") {
         braco.value = parseInt(braco.value) - 1;
         
