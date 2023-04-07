@@ -15,18 +15,21 @@ const pecas = { //array de objetos
         "energia": 0,
         "velocidade": -20
     },
+    
     "nucleos":{
         "forca": 0,
         "poder": 7,
         "energia": 48,
         "velocidade": -24
     },
+
     "pernas":{
         "forca": 27,
         "poder": 21,
         "energia": -32,
         "velocidade": 42
     },
+
     "foguetes":{
         "forca": 0,
         "poder": 28,
@@ -49,13 +52,14 @@ function zeroEsquerda(numero) {
     return numero;
 }
 
-function manipulaDados(operacao) {
+function manipulaDados(operacao, controle) {
+    const peca = controle.querySelector("[data-contador]");
     if (operacao === "-") {
-        braco.value = parseInt(braco.value) - 1;
+        peca.value = parseInt(peca.value) - 1;
         
         if (peca.value < 0) {
             peca.value = 0;
-        }
+        } 
         
     } else {
         peca.value = parseInt(peca.value) + 1;
@@ -63,6 +67,8 @@ function manipulaDados(operacao) {
     peca.value = zeroEsquerda(peca.value);
 } 
 
-function atualizaEstatisticas(peca) {
-    console.log(peca);
+function atualizaEstatisticas(pcEscolhida) {
+    estatisticas.forEach(elemento => {
+        elemento.textContent = parseInt(elemento.textContent) + pecas[pcEscolhida][elemento.dataset.estatistica]
+    });
 }
