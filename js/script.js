@@ -56,10 +56,6 @@ function manipulaDados(operacao, controle) {
     const peca = controle.querySelector("[data-contador]");
     if (operacao === "-") {
         peca.value = parseInt(peca.value) - 1;
-function manipulaDados(operacao, controle) {
-    const peca = controle.querySelector("[data-contador]");
-    if (operacao === "-") {
-        peca.value = parseInt(peca.value) - 1;
         
         if (peca.value < 0) {
             peca.value = 0;
@@ -71,6 +67,7 @@ function manipulaDados(operacao, controle) {
     peca.value = zeroEsquerda(peca.value);
 } 
 
+        
 function atualizaEstatisticas(pcEscolhida) {
     estatisticas.forEach(elemento => {
         elemento.textContent = parseInt(elemento.textContent) + pecas[pcEscolhida][elemento.dataset.estatistica];
