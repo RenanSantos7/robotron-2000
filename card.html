@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: 0;
+        }
+
+        body {
+            background-image: radial-gradient(#5d6b92 40%, #3a3a5f 90%, #33335c 100%);
+            font-size: .98rem;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        article {
+            background-color: #fafafa;
+            width: 300px;
+            border-radius: 16px;
+            box-shadow: 1px 1px 15px rgba(0,0,0,0.5);
+            overflow: hidden; /*é o que faz a imagem respeitar o border radius */
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .card-text {
+            padding: 24px;
+            padding-bottom: 42px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: semibold;
+        }
+
+        p {
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <article class="card">
+            <img alt="foto de bebê" src="https://images.unsplash.com/photo-1607218117995-6256670c21e6">
+            <div class="card-text">
+                <h2>Foto de Bebê</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente esse nam, repudiandae, mollitia soluta, corrupti non beatae quam tempora magnam hic commodi? Quos iure sit enim fugit sed voluptatibus iste.</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img alt="foto de uma sala" src="https://plus.unsplash.com/premium_photo-1675537857054-8c7e518553af">
+            <div class="card-text">
+                <h2>Foto de Sala</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente esse nam, repudiandae, mollitia soluta, corrupti non beatae quam tempora magnam hic commodi? Quos iure sit enim fugit sed voluptatibus iste.</p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
