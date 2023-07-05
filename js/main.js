@@ -56,3 +56,15 @@ function atualizaEstatisticas(peca) {
         elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica];
     });
 }
+
+// Mudança de cor
+
+const robo = document.querySelector(".robo");
+const cores = document.querySelectorAll(".cor");
+
+cores.forEach((elemento) => {
+    elemento.addEventListener("click", (evento) => {
+        console.log(evento.value);
+        robo.src = "img/" + elemento.value + ".png";
+    })
+})

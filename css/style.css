@@ -2,6 +2,7 @@
     --main-cinza: #CCCCCC;
     --main-branco: #FFFFFF;
     --main-preto: #000000;
+    --box-cinza: rgba(0,0,0,0.6);
 }
 
 * {
@@ -59,7 +60,7 @@ main {
 }
 
 .box {
-    background: rgba(0,0,0,0.6);
+    background: var(--box-cinza);
     clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
     border-left: 5px solid var(--main-cinza);
     height: 80%;
@@ -131,16 +132,19 @@ main {
     border-color: var(--main-cinza);
 }
 
-.producao {
+.botoes input {
+    cursor: pointer;
     margin-top: 1em;
+}
+
+.producao {
+    float: right;
     font-size: 2em;
     text-transform: uppercase;
     padding: 0.2em 1em;
-    float: right;
     border: 3px solid var(--main-branco);
     background: var(--main-branco);
     clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
-    cursor: pointer;
 }
 
 .producao:hover {
@@ -148,7 +152,53 @@ main {
     color: var(--main-branco)
 }
 
+.muda-cores {
+    position: absolute;
+    top: 5px;
+    left: 5vw;
+    display: flex;
+    gap: 1em;
+}
 
+.muda-cores .cor {
+    font-size: 1.5em;
+    border: none;
+    width: 100px;
+    clip-path: polygon(100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 0);
+    background-color: var(--box-cinza);
+    color: white;
+    text-transform: capitalize;
+}
+
+#cor-amarelo:hover {
+    color: black;
+    background-color: rgb(204, 204, 20);
+}
+
+#cor-azul:hover {
+    color: white;
+    background-color: rgb(84, 71, 201);
+}
+
+#cor-branco:hover {
+    color: black;
+    background-color: rgb(240, 240, 237);
+}
+
+#cor-preto:hover {
+    color: white;
+    background-color: black;
+}
+
+#cor-rosa:hover {
+    color: white;
+    background-color: rgb(204, 20, 133);
+}
+
+#cor-vermelho:hover {
+    color: white;
+    background-color: rgb(204, 48, 20);
+}
 
 /****************************** Estatísticas *****/
 .estatisticas {
